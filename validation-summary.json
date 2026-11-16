@@ -1,0 +1,379 @@
+{
+  "metrics": "Upstream RGBA MAE, luminance difference >12, white background. Corpus size mismatches resized with LANCZOS as upstream.",
+  "corpus": {
+    "revision": "12531342c926708dcb1387ea25213db4603a7255",
+    "scale": 2.0,
+    "native_hashes": {
+      "baseline": "bf6f130f208728f69d8ee7f82fd1e3836c1cff1a90188712e576447fbe885480",
+      "candidate1": "a55af354e2d0d92f7e440eddd27a3c4230c90620775686ec8d27024524862652"
+    },
+    "expected_documents": 457,
+    "completed_documents": 457,
+    "expected_selected_pages": 954,
+    "hash_verified_inputs": 457,
+    "input_bytes": 368863007,
+    "errors": [],
+    "native_pixel_identical_pages": 934,
+    "native_size_changes": [],
+    "native_pdfium_size_mismatches": [],
+    "paired_pages": 954,
+    "mae_improved_pages": 17,
+    "mae_unchanged_pages": 934,
+    "mae_increased_pages": 3,
+    "max_mae_increase": 8.667836345832569e-05,
+    "max_changed_pixels_ratio_increase": 2.6425427443757532e-05,
+    "changed_pixels_ratio_increased_pages": 9,
+    "pages_worse_beyond_upstream_delta_tolerance": [],
+    "text_cell_differences": [],
+    "page_average_metrics": {
+      "before": {
+        "mean_abs_error": 2.469684072881221,
+        "changed_pixels_ratio": 0.06073282877052047
+      },
+      "after": {
+        "mean_abs_error": 2.4694939993198113,
+        "changed_pixels_ratio": 0.06073243353291973
+      }
+    },
+    "worsening_pages": [
+      {
+        "document": "15643741724817381873-1.pdf",
+        "page": 1,
+        "cells_equal": true,
+        "before_mean_abs_error": 4.423020489210656,
+        "after_mean_abs_error": 4.4231071675741145,
+        "delta_mean_abs_error": 8.667836345832569e-05,
+        "before_changed_pixels_ratio": 0.13577244783753534,
+        "after_changed_pixels_ratio": 0.13577853052970787,
+        "delta_changed_pixels_ratio": 6.0826921725321e-06,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "926659986622553168-1.pdf",
+        "page": 2,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.1089200882253136,
+        "after_mean_abs_error": 2.1089204624842814,
+        "delta_mean_abs_error": 3.7425896781684287e-07,
+        "before_changed_pixels_ratio": 0.05538883011636959,
+        "after_changed_pixels_ratio": 0.05538883011636959,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "indexed_iccbased.pdf",
+        "page": 1,
+        "cells_equal": true,
+        "before_mean_abs_error": 3.621939786717156,
+        "after_mean_abs_error": 3.6219435690943045,
+        "delta_mean_abs_error": 3.782377148375815e-06,
+        "before_changed_pixels_ratio": 0.12286079555278902,
+        "after_changed_pixels_ratio": 0.1228683603070858,
+        "delta_changed_pixels_ratio": 7.564754296779386e-06,
+        "native_pixels_equal": false
+      }
+    ]
+  },
+  "original_manual": {
+    "source_sha256": "e311de54ad0ee6f5913e18e694914a560dac3592987437290c271f53c0c7fa71",
+    "scale": 2.0,
+    "paired_pages": 52,
+    "mae_improved_pages": 28,
+    "mae_unchanged_pages": 13,
+    "mae_increased_pages": 11,
+    "max_mae_increase": 7.736680530889828e-06,
+    "max_changed_pixels_ratio_increase": 5.157787020537707e-07,
+    "changed_pixels_ratio_increased_pages": 4,
+    "pages_worse_beyond_upstream_delta_tolerance": [],
+    "text_cell_differences": [],
+    "page_average_metrics": {
+      "before": {
+        "mean_abs_error": 2.181586991454102,
+        "changed_pixels_ratio": 0.07688365952765462
+      },
+      "after": {
+        "mean_abs_error": 2.173540868499125,
+        "changed_pixels_ratio": 0.0768359599165359
+      }
+    },
+    "worsening_pages": [
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 15,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.229187813593451,
+        "after_mean_abs_error": 2.229190392486961,
+        "delta_mean_abs_error": 2.5788935102966093e-06,
+        "before_changed_pixels_ratio": 0.07773197662903546,
+        "after_changed_pixels_ratio": 0.0777314608503334,
+        "delta_changed_pixels_ratio": -5.157787020537707e-07,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 17,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.662026721462996,
+        "after_mean_abs_error": 2.662034458143527,
+        "delta_mean_abs_error": 7.736680530889828e-06,
+        "before_changed_pixels_ratio": 0.10067071862415,
+        "after_changed_pixels_ratio": 0.10067071862415,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 18,
+        "cells_equal": true,
+        "before_mean_abs_error": 3.1000301214762,
+        "after_mean_abs_error": 3.1000310240889286,
+        "delta_mean_abs_error": 9.026127285594043e-07,
+        "before_changed_pixels_ratio": 0.10932857991681522,
+        "after_changed_pixels_ratio": 0.10932909569551727,
+        "delta_changed_pixels_ratio": 5.157787020537707e-07,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 23,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.273626919728329,
+        "after_mean_abs_error": 2.2736280802304085,
+        "delta_mean_abs_error": 1.1605020793226117e-06,
+        "before_changed_pixels_ratio": 0.08320851488743645,
+        "after_changed_pixels_ratio": 0.08320903066613851,
+        "delta_changed_pixels_ratio": 5.157787020537707e-07,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 26,
+        "cells_equal": true,
+        "before_mean_abs_error": 1.808135738512577,
+        "after_mean_abs_error": 1.8081366411253055,
+        "delta_mean_abs_error": 9.026127285594043e-07,
+        "before_changed_pixels_ratio": 0.05868169026870007,
+        "after_changed_pixels_ratio": 0.05868169026870007,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 31,
+        "cells_equal": true,
+        "before_mean_abs_error": 1.2693502116755793,
+        "after_mean_abs_error": 1.2693504695649303,
+        "delta_mean_abs_error": 2.57889350985252e-07,
+        "before_changed_pixels_ratio": 0.0479266727734865,
+        "after_changed_pixels_ratio": 0.0479266727734865,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 42,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.9559896349112034,
+        "after_mean_abs_error": 2.955990795413283,
+        "delta_mean_abs_error": 1.160502079766701e-06,
+        "before_changed_pixels_ratio": 0.11283329619726679,
+        "after_changed_pixels_ratio": 0.11283329619726679,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 47,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.7312925775318546,
+        "after_mean_abs_error": 2.7312928354212054,
+        "delta_mean_abs_error": 2.578893507632074e-07,
+        "before_changed_pixels_ratio": 0.09790356588763452,
+        "after_changed_pixels_ratio": 0.09790356588763452,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 48,
+        "cells_equal": true,
+        "before_mean_abs_error": 1.477459568107546,
+        "after_mean_abs_error": 1.4774611154436523,
+        "delta_mean_abs_error": 1.5473361063556013e-06,
+        "before_changed_pixels_ratio": 0.050039302337096456,
+        "after_changed_pixels_ratio": 0.0500387865583944,
+        "delta_changed_pixels_ratio": -5.157787020537707e-07,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 49,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.7069215180811383,
+        "after_mean_abs_error": 2.7069216470258137,
+        "delta_mean_abs_error": 1.289446753816037e-07,
+        "before_changed_pixels_ratio": 0.10290094573182808,
+        "after_changed_pixels_ratio": 0.10290094573182808,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      },
+      {
+        "document": "georgia-drivers-manual-2023-2024.pdf",
+        "page": 50,
+        "cells_equal": true,
+        "before_mean_abs_error": 2.3686888028570015,
+        "after_mean_abs_error": 2.3686903501931074,
+        "delta_mean_abs_error": 1.547336105911512e-06,
+        "before_changed_pixels_ratio": 0.08877428286129267,
+        "after_changed_pixels_ratio": 0.08877428286129267,
+        "delta_changed_pixels_ratio": 0.0,
+        "native_pixels_equal": false
+      }
+    ],
+    "pixel_deltas_on_worsening_pages": [
+      {
+        "page": 15,
+        "changed_pixels": 6,
+        "total_pixels": 1938816,
+        "max_channel_difference": 7,
+        "bbox_pixels": [
+          485,
+          163,
+          863,
+          368
+        ],
+        "delta_mae_vs_pdfium": 2.5788935102966093e-06
+      },
+      {
+        "page": 17,
+        "changed_pixels": 24,
+        "total_pixels": 1938816,
+        "max_channel_difference": 9,
+        "bbox_pixels": [
+          171,
+          231,
+          717,
+          1320
+        ],
+        "delta_mae_vs_pdfium": 7.736680530889828e-06
+      },
+      {
+        "page": 18,
+        "changed_pixels": 9,
+        "total_pixels": 1938816,
+        "max_channel_difference": 4,
+        "bbox_pixels": [
+          499,
+          552,
+          708,
+          562
+        ],
+        "delta_mae_vs_pdfium": 9.026127285594043e-07
+      },
+      {
+        "page": 23,
+        "changed_pixels": 8,
+        "total_pixels": 1938816,
+        "max_channel_difference": 1,
+        "bbox_pixels": [
+          191,
+          150,
+          620,
+          967
+        ],
+        "delta_mae_vs_pdfium": 1.1605020793226117e-06
+      },
+      {
+        "page": 26,
+        "changed_pixels": 12,
+        "total_pixels": 1938816,
+        "max_channel_difference": 3,
+        "bbox_pixels": [
+          198,
+          1153,
+          772,
+          1405
+        ],
+        "delta_mae_vs_pdfium": 9.026127285594043e-07
+      },
+      {
+        "page": 31,
+        "changed_pixels": 2,
+        "total_pixels": 1938816,
+        "max_channel_difference": 1,
+        "bbox_pixels": [
+          250,
+          156,
+          252,
+          157
+        ],
+        "delta_mae_vs_pdfium": 2.57889350985252e-07
+      },
+      {
+        "page": 42,
+        "changed_pixels": 1,
+        "total_pixels": 1938816,
+        "max_channel_difference": 4,
+        "bbox_pixels": [
+          821,
+          1086,
+          822,
+          1087
+        ],
+        "delta_mae_vs_pdfium": 1.160502079766701e-06
+      },
+      {
+        "page": 47,
+        "changed_pixels": 3,
+        "total_pixels": 1938816,
+        "max_channel_difference": 3,
+        "bbox_pixels": [
+          186,
+          896,
+          624,
+          1323
+        ],
+        "delta_mae_vs_pdfium": 2.578893507632074e-07
+      },
+      {
+        "page": 48,
+        "changed_pixels": 15,
+        "total_pixels": 1938816,
+        "max_channel_difference": 6,
+        "bbox_pixels": [
+          158,
+          149,
+          250,
+          162
+        ],
+        "delta_mae_vs_pdfium": 1.5473361063556013e-06
+      },
+      {
+        "page": 49,
+        "changed_pixels": 3,
+        "total_pixels": 1938816,
+        "max_channel_difference": 2,
+        "bbox_pixels": [
+          233,
+          156,
+          543,
+          1149
+        ],
+        "delta_mae_vs_pdfium": 1.289446753816037e-07
+      },
+      {
+        "page": 50,
+        "changed_pixels": 5,
+        "total_pixels": 1938816,
+        "max_channel_difference": 3,
+        "bbox_pixels": [
+          124,
+          736,
+          469,
+          1192
+        ],
+        "delta_mae_vs_pdfium": 1.547336105911512e-06
+      }
+    ]
+  }
+}

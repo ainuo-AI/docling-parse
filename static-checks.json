@@ -1,0 +1,84 @@
+{
+  "versions": {
+    "ruff": "ruff 0.17.1",
+    "mypy": "mypy 1.20.2 (compiled: yes)",
+    "uv": "uv 0.13.8 (3d97a6aad 2026-11-12 x86_64-pc-windows-msvc)"
+  },
+  "checks": {
+    "ruff-format": {
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\ruff.exe",
+        "format",
+        "--check",
+        "docling_parse",
+        "tests",
+        "scripts"
+      ],
+      "working_directory": "<validation-root>\\dp-cff-src",
+      "returncode": 0
+    },
+    "ruff-check": {
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\ruff.exe",
+        "check",
+        "docling_parse",
+        "tests",
+        "scripts"
+      ],
+      "working_directory": "<validation-root>\\dp-cff-src",
+      "returncode": 0
+    },
+    "uv-lock-check": {
+      "command": [
+        "<workspace>\\work\\public-api-prs-2026-11-13-b\\.venv\\Scripts\\uv.exe",
+        "lock",
+        "--check",
+        "--offline",
+        "--python",
+        "<user-home>\\AppData\\Local\\Programs\\Python\\Python312\\python.exe"
+      ],
+      "working_directory": "<validation-root>\\dp-cff-src",
+      "returncode": 0
+    },
+    "mypy-current": {
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\mypy.exe",
+        "--python-executable",
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\python.exe",
+        "docling_parse",
+        "tests",
+        "scripts"
+      ],
+      "working_directory": "<validation-root>\\dp-cff-src",
+      "returncode": 1
+    },
+    "mypy-baseline": {
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\mypy.exe",
+        "--python-executable",
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\python.exe",
+        "docling_parse",
+        "tests",
+        "scripts"
+      ],
+      "working_directory": "<validation-root>\\dp-review-typecheck-main",
+      "returncode": 1
+    },
+    "git-diff-check": {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "working_directory": "<validation-root>\\dp-cff-src",
+      "returncode": 0
+    }
+  },
+  "mypy": {
+    "baseline_error_count": 19,
+    "current_error_count": 19,
+    "diagnostics_identical": true,
+    "new_diagnostics": []
+  },
+  "literal_precommit_command_run": false
+}

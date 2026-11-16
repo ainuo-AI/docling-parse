@@ -1,0 +1,10 @@
+....................................................................s... [ 73%]
+
+..........................                                               [100%]
+
+=========================== short test summary info ===========================
+
+SKIPPED [1] dp-cff-src\tests\test_unit_font_fallback.py:117: needs a document-level Arabic fallback face and a CID descendant font; covered by the corpus pages until a shippable fixture exists
+
+97 passed, 1 skipped in 18.33s
+

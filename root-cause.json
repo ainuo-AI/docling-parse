@@ -1,0 +1,22 @@
+{
+  "pdf_font": "/*Arial-Bold-15051-Identity-H",
+  "pdf_encoding": "/Identity-H",
+  "pdf_to_unicode_mapping": {
+    "0020": "006E (n)"
+  },
+  "embedded_cff_cid32_outline_bbox": [
+    53,
+    1,
+    561,
+    538.2544145564427
+  ],
+  "afm_font": "Helvetica-Bold",
+  "afm_raw_slot_32": "C 32 ; WX 278 ; N space ; B 0 0 0 0 ;",
+  "failure_chain": [
+    "Type0 code 0x0020 -> CID32 -> Unicode n",
+    "raw CID used as standard AFM character slot",
+    "AFM space bbox has zero vertical extent",
+    "render instruction quad_h < 0.5 -> render_text returns early"
+  ],
+  "fix": "composite-font character codes must not use numeric AFM slot lookup"
+}

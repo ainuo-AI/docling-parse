@@ -1,0 +1,648 @@
+FFFFFFFFF...                                                             [100%]
+
+================================== FAILURES ===================================
+
+_____ test_composite_code_32_keeps_its_visible_glyph[freetype-Helvetica] ______
+
+
+
+base_font = 'Helvetica', complete = False
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+____ test_composite_code_32_keeps_its_visible_glyph[freetype-Times-Roman] _____
+
+
+
+base_font = 'Times-Roman', complete = False
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+______ test_composite_code_32_keeps_its_visible_glyph[freetype-Courier] _______
+
+
+
+base_font = 'Courier', complete = False
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+_______ test_composite_code_32_keeps_its_visible_glyph[freetype-Symbol] _______
+
+
+
+base_font = 'Symbol', complete = False
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+______ test_composite_code_32_keeps_its_visible_glyph[blend2d-Helvetica] ______
+
+
+
+base_font = 'Helvetica', complete = True
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+_____ test_composite_code_32_keeps_its_visible_glyph[blend2d-Times-Roman] _____
+
+
+
+base_font = 'Times-Roman', complete = True
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+_______ test_composite_code_32_keeps_its_visible_glyph[blend2d-Courier] _______
+
+
+
+base_font = 'Courier', complete = True
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+_______ test_composite_code_32_keeps_its_visible_glyph[blend2d-Symbol] ________
+
+
+
+base_font = 'Symbol', complete = True
+
+
+
+    @pytest.mark.parametrize("base_font", ["Helvetica", "Times-Roman", "Courier", "Symbol"])
+
+    @pytest.mark.parametrize("complete", [False, True], ids=["freetype", "blend2d"])
+
+    def test_composite_code_32_keeps_its_visible_glyph(
+
+        base_font: str, complete: bool
+
+    ) -> None:
+
+        """A subset code 32 draws its mapped glyph, not the AFM space (issue #466)."""
+
+        pdfium = pytest.importorskip("pypdfium2")
+
+        cid_to_gid = bytes(2 * 32) + bytes([0, 1])
+
+        pdf = _page(
+
+            _complete_font() if complete else _cmapless_font(),
+
+            code=32,
+
+            cid_to_gid=cid_to_gid,
+
+            base_font=base_font,
+
+        )
+
+        actual = flatten_on_white(render_page(pdf, scale=MEASURE_SCALE).get_image())
+
+        with pdfium.PdfDocument(pdf) as document:
+
+            expected = flatten_on_white(document[0].render(scale=MEASURE_SCALE).to_pil())
+
+    
+
+        assert actual.size == expected.size
+
+        actual_mask = actual.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        expected_mask = expected.convert("L").point(lambda value: 255 if value < 128 else 0)
+
+        intersection = ImageChops.darker(actual_mask, expected_mask).histogram()[255]
+
+        union = ImageChops.lighter(actual_mask, expected_mask).histogram()[255]
+
+        assert union > 0, "the reference glyph must have ink"
+
+>       assert intersection / union > 0.95, "the composite glyph does not match PDFium"
+
+E       AssertionError: the composite glyph does not match PDFium
+
+E       assert (0 / 1640) > 0.95
+
+
+
+dp-cff-src\tests\test_unit_cid_to_gid_map.py:231: AssertionError
+
+_________________ test_composite_cid_32_keeps_formula_equals __________________
+
+
+
+    def test_composite_cid_32_keeps_formula_equals() -> None:
+
+        pytest.importorskip("pypdfium2")
+
+        document = "10749817875312063576_009.pdf"
+
+        pdf_path = REGRESSION_DIR / document
+
+        page_no, scale = 5, 3.0
+
+    
+
+        # "Nonideal Flow Models in Homogeneous Chemical Reactors", equation (9).
+
+        # The embedded SymbolMT subset maps CID 32 to '='. Applying the standard
+
+        # font's numeric AFM slot 32 gives it a zero-height space bbox (#466).
+
+        # Focus on the first '=', which otherwise contributes too few pixels to
+
+        # fail a whole-page image comparison. Coordinates are top-left PDF points.
+
+        left, top, right, bottom = 100, 124, 114, 139
+
+        crop = (
+
+            round(left * scale),
+
+            round(top * scale),
+
+            round(right * scale),
+
+            round(bottom * scale),
+
+        )
+
+        result = render_page(pdf_path.read_bytes(), page_no=page_no, scale=scale)
+
+        actual = flatten_on_white(result.get_image()).crop(crop)
+
+        reference = flatten_on_white(
+
+            render_pypdfium_page(pdf_path, page_no, scale=scale)
+
+        ).crop(crop)
+
+        assert sum(reference.convert("L").histogram()[:128]) > 0, (
+
+            "the reference '=' must have visible ink"
+
+        )
+
+        tolerance = ImageTolerance(
+
+            pixel_threshold=12, mean_abs_error=3.0, changed_pixels_ratio=0.08
+
+        )
+
+        comparison = measure_image_pair(
+
+            document, page_no, actual, reference, tolerance=tolerance
+
+        )
+
+    
+
+>       assert not image_comparison_failed(comparison, tolerance=tolerance), (
+
+            f"the formula's '=' does not match PDFium: "
+
+            f"mean_abs_error={comparison.mean_abs_error:.4f} "
+
+            f"(limit {tolerance.mean_abs_error}), "
+
+            f"changed_pixels_ratio={comparison.changed_pixels_ratio:.4f} "
+
+            f"(limit {tolerance.changed_pixels_ratio})"
+
+        )
+
+E       AssertionError: the formula's '=' does not match PDFium: mean_abs_error=6.4742 (limit 3.0), changed_pixels_ratio=0.0503 (limit 0.08)
+
+E       assert not True
+
+E        +  where True = image_comparison_failed(ImageComparison(document='10749817875312063576_009.pdf', page=5, actual_width=42, actual_height=45, expected_width=42,..., changed_pixels_ratio=0.05026455026455026, changed_pixels=95, total_pixels=1890, normalized_delta=0.03385205934225542), tolerance=ImageTolerance(pixel_threshold=12, mean_abs_error=3.0, changed_pixels_ratio=0.08))
+
+
+
+dp-cff-src\tests\test_regression_composite_font_rendering.py:54: AssertionError
+
+=========================== short test summary info ===========================
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[freetype-Helvetica]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[freetype-Times-Roman]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[freetype-Courier]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[freetype-Symbol]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[blend2d-Helvetica]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[blend2d-Times-Roman]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[blend2d-Courier]
+
+FAILED dp-cff-src\tests\test_unit_cid_to_gid_map.py::test_composite_code_32_keeps_its_visible_glyph[blend2d-Symbol]
+
+FAILED dp-cff-src\tests\test_regression_composite_font_rendering.py::test_composite_cid_32_keeps_formula_equals
+
+9 failed, 3 passed, 5 deselected in 10.50s
+

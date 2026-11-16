@@ -1,0 +1,113 @@
+{
+  "production_header_unchanged_from_full_corpus_run": true,
+  "source_sha256": {
+    "src/parse/pdf_resources/page_font.h": "661c42323d9e8f46e05cc8bb4ccce2602e6ee47c0b0e4268cac63d1c6d9c62aa",
+    "tests/test_unit_cid_to_gid_map.py": "059a183ff1c21683c222b43512190ca95c027cc84ec123e757ed6479a8d5f032",
+    "tests/test_regression_composite_font_rendering.py": "c40f310e21a1d9ade95bbe571303f6a33e8462e83649aefb85af422c96e5f167"
+  },
+  "cases": [
+    {
+      "name": "baseline-515",
+      "variant": "baseline",
+      "pypdfium2": "5.15.2",
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "--import-mode=importlib",
+        "-q",
+        "-ra",
+        "dp-cff-src\\tests\\test_unit_cid_to_gid_map.py",
+        "dp-cff-src\\tests\\test_regression_composite_font_rendering.py",
+        "-k",
+        "composite"
+      ],
+      "cwd": "<validation-root>",
+      "native_sha256": "bf6f130f208728f69d8ee7f82fd1e3836c1cff1a90188712e576447fbe885480",
+      "returncode": 1,
+      "expected_returncode": 1,
+      "expected_summary": "9 failed, 3 passed, 5 deselected",
+      "summary_found": true
+    },
+    {
+      "name": "candidate1-focused-515",
+      "variant": "candidate1",
+      "pypdfium2": "5.15.2",
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "--import-mode=importlib",
+        "-q",
+        "-ra",
+        "dp-cff-src\\tests\\test_unit_cid_to_gid_map.py",
+        "dp-cff-src\\tests\\test_unit_standard_font_widths.py",
+        "dp-cff-src\\tests\\test_unit_cmap_encoding.py",
+        "dp-cff-src\\tests\\test_unit_invalid_font_metrics.py",
+        "dp-cff-src\\tests\\test_unit_control_char_word_space.py",
+        "dp-cff-src\\tests\\test_unit_symbol_font_private_use.py",
+        "dp-cff-src\\tests\\test_unit_font_name_resolution.py",
+        "dp-cff-src\\tests\\test_unit_font_fallback.py",
+        "dp-cff-src\\tests\\test_unit_type3_fonts.py",
+        "dp-cff-src\\tests\\test_unit_text_render_modes.py",
+        "dp-cff-src\\tests\\test_unit_actual_text.py",
+        "dp-cff-src\\tests\\test_unit_cjk_fonts.py::test_gbk_euc_codes_decode_to_their_characters",
+        "dp-cff-src\\tests\\test_regression_composite_font_rendering.py"
+      ],
+      "cwd": "<validation-root>",
+      "native_sha256": "a55af354e2d0d92f7e440eddd27a3c4230c90620775686ec8d27024524862652",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_summary": "97 passed, 1 skipped",
+      "summary_found": true
+    },
+    {
+      "name": "baseline-514",
+      "variant": "baseline",
+      "pypdfium2": "5.14.0",
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "--import-mode=importlib",
+        "-q",
+        "-ra",
+        "dp-cff-src\\tests\\test_unit_cid_to_gid_map.py",
+        "dp-cff-src\\tests\\test_regression_composite_font_rendering.py",
+        "-k",
+        "composite"
+      ],
+      "cwd": "<validation-root>",
+      "native_sha256": "bf6f130f208728f69d8ee7f82fd1e3836c1cff1a90188712e576447fbe885480",
+      "returncode": 1,
+      "expected_returncode": 1,
+      "expected_summary": "9 failed, 3 passed, 5 deselected",
+      "summary_found": true
+    },
+    {
+      "name": "candidate1-514",
+      "variant": "candidate1",
+      "pypdfium2": "5.14.0",
+      "command": [
+        "<workspace>\\work\\docling-triage-2026-11-14-env\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "--import-mode=importlib",
+        "-q",
+        "-ra",
+        "dp-cff-src\\tests\\test_unit_cid_to_gid_map.py",
+        "dp-cff-src\\tests\\test_regression_composite_font_rendering.py"
+      ],
+      "cwd": "<validation-root>",
+      "native_sha256": "a55af354e2d0d92f7e440eddd27a3c4230c90620775686ec8d27024524862652",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "expected_summary": "17 passed",
+      "summary_found": true
+    }
+  ]
+}

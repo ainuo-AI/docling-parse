@@ -1,0 +1,224 @@
+scripts\benchmarking\_performance_memory.py:190: error: Module has no attribute
+
+"wait4"  [attr-defined]
+
+                    pid, status, usage = os.wait4(process.pid, 0 if block ...
+
+                                         ^~~~~~~~
+
+scripts\benchmarking\_performance_memory.py:190: error: Module has no attribute
+
+"WNOHANG"  [attr-defined]
+
+    ...pid, status, usage = os.wait4(process.pid, 0 if block else os.WNOHANG)
+
+                                                                  ^~~~~~~~~~
+
+scripts\benchmarking\_performance_memory_report.py:173: error: Cannot find
+
+implementation or library stub for module named "matplotlib"  [import-not-found]
+
+        import matplotlib
+
+        ^
+
+scripts\benchmarking\_performance_memory_report.py:176: error: Cannot find
+
+implementation or library stub for module named "matplotlib.pyplot" 
+
+[import-not-found]
+
+        import matplotlib.pyplot as plt
+
+        ^
+
+scripts\benchmarking\run_performance_report.py:1430: error: Cannot find
+
+implementation or library stub for module named "matplotlib"  [import-not-found]
+
+        import matplotlib
+
+        ^
+
+scripts\benchmarking\run_performance_report.py:1433: error: Cannot find
+
+implementation or library stub for module named "matplotlib.pyplot" 
+
+[import-not-found]
+
+        import matplotlib.pyplot as plt
+
+        ^
+
+scripts\benchmarking\run_performance_eval.py:41: error: Cannot find
+
+implementation or library stub for module named "matplotlib"  [import-not-found]
+
+    import matplotlib
+
+    ^
+
+scripts\benchmarking\run_performance_eval.py:46: error: Cannot find
+
+implementation or library stub for module named "matplotlib.pyplot" 
+
+[import-not-found]
+
+    import matplotlib.pyplot as plt
+
+    ^
+
+scripts\benchmarking\run_performance_eval.py:57: error: Cannot find
+
+implementation or library stub for module named "matplotlib.colors" 
+
+[import-not-found]
+
+    from matplotlib.colors import LogNorm
+
+    ^
+
+tests\test_unit_performance_memory.py:141: error: Module has no attribute
+
+"WNOHANG"  [attr-defined]
+
+            os.waitpid(result["pid"], os.WNOHANG)
+
+                                      ^~~~~~~~~~
+
+scripts\benchmarking\run_performance_benchmarking.py:279: error: Module has no
+
+attribute "sysconf"  [attr-defined]
+
+            page_size = os.sysconf("SC_PAGE_SIZE")
+
+                        ^~~~~~~~~~
+
+scripts\benchmarking\run_performance_benchmarking.py:280: error: Module has no
+
+attribute "sysconf"  [attr-defined]
+
+            page_count = os.sysconf("SC_PHYS_PAGES")
+
+                         ^~~~~~~~~~
+
+scripts\benchmarking\run_performance_benchmarking.py:757: error: Cannot find
+
+implementation or library stub for module named "pymupdf"  [import-not-found]
+
+            import pymupdf
+
+            ^
+
+scripts\benchmarking\run_performance_benchmarking.py:757: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+
+tests\test_unit_soft_masks.py:497: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_embedded_fonts.py:149: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_embedded_fonts.py:207: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_embedded_fonts.py:262: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_parse.py:816: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_parse.py:818: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_parse.py:837: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_parse.py:839: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_parse.py:857: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_parse.py:863: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_unit_structure_tree.py:121: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_unit_structure_tree.py:122: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_unit_structure_tree.py:153: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_unit_signed_form_json.py:154: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:128: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:129: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:130: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:131: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:150: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:293: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:318: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_parse.py:426: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\rendering_regression.py:938: error: Cannot find implementation or library
+
+stub for module named "matplotlib"  [import-not-found]
+
+            import matplotlib
+
+            ^
+
+tests\rendering_regression.py:944: error: Cannot find implementation or library
+
+stub for module named "matplotlib.pyplot"  [import-not-found]
+
+        import matplotlib.pyplot as plt
+
+        ^
+
+tests\rendering_regression.py:944: note: See https://mypy.readthedocs.io/en/stable/running_mypy.html#missing-imports
+
+scripts\benchmarking\run_quality_benchmarking.py:425: error: Cannot find
+
+implementation or library stub for module named "pdfplumber"  [import-not-found]
+
+        import pdfplumber
+
+        ^
+
+scripts\benchmarking\run_quality_benchmarking.py:441: error: Cannot find
+
+implementation or library stub for module named "pdfminer.high_level" 
+
+[import-not-found]
+
+        from pdfminer.high_level import extract_text
+
+        ^
+
+tests\test_regression_threaded_render.py:167: error: Cannot find implementation
+
+or library stub for module named "matplotlib.pyplot"  [import-not-found]
+
+        import matplotlib.pyplot as plt
+
+        ^
+
+tests\test_regression_threaded_render.py:167: error: Cannot find implementation
+
+or library stub for module named "matplotlib"  [import-not-found]
+
+        import matplotlib.pyplot as plt
+
+        ^
+
+tests\test_regression_threaded_render.py:251: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_render.py:592: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_render.py:593: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_render.py:594: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_render.py:595: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+tests\test_regression_threaded_render.py:613: note: By default the bodies of untyped functions are not checked, consider using --check-untyped-defs  [annotation-unchecked]
+
+Found 19 errors in 9 files (checked 119 source files)
+

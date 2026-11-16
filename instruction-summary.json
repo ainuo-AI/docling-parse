@@ -1,0 +1,25 @@
+{
+  "compared_documents": 457,
+  "compared_selected_pages": 954,
+  "normalized_instruction_changed_pages": 145,
+  "normalized_instruction_changed_documents": 81,
+  "normalized_instruction_unchanged_pages": 809,
+  "instruction_count_or_order_changes": 0,
+  "non_text_instruction_changes": 0,
+  "changed_fields_by_page_count": {
+    "text.quad.r_y3": 139,
+    "text.quad.r_y1": 139,
+    "text.quad.r_y2": 139,
+    "text.quad.r_y0": 139,
+    "text.font_descent_norm": 145,
+    "text.font_ascent_norm": 145,
+    "text.quad.r_x2": 28,
+    "text.quad.r_x1": 28,
+    "text.quad.r_x3": 28,
+    "text.quad.r_x0": 28
+  },
+  "instruction_changed_but_pixel_identical_pages": 125,
+  "pixel_changed_pages": 20,
+  "source": "tests.rendering_regression.normalized_render_instructions; round floats to 3 decimals exactly as the repository's groundtruth tests",
+  "comparison_scope": "fresh main vs fix, same local environment; not a comparison with downloaded remote groundtruth blobs"
+}
