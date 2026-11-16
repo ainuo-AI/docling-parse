@@ -74,6 +74,11 @@ tests use supported public APIs.
 - The eight generated TrueType cases isolate the numeric AFM/CID collision
   on two rendering paths. The real formula is the ninth failing case. Three
   real whole-page controls pass on both versions and use embedded text fonts.
+  Their MAE limits are 5.0 / 2.5 / 4.0, below the general report cutoff 9.0.
+  Their changed-ratio limits are 0.15 / 0.07 / 0.14; the first and third are
+  above the report cutoff 0.09 because main already measures 0.13577 / 0.12286
+  on those pages. These are page-specific controls, not tighter bounds on
+  both metrics, and no global tolerance was changed.
 - Ruff format/check, offline `uv lock --check` and whitespace checks pass.
 - MyPy has the same 19 baseline errors on main and fix in this Windows
   environment. The logs show missing optional benchmark packages and POSIX-only
